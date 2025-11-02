@@ -1,16 +1,32 @@
-# futbal_shop_mobile
+Punya M. Fadhlurrohman Pasya
+2406411830
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1.
+Semua di flutter adalah widget
+Widget tree adalah cara menstruktur widget-widget tersebut
+Child widgets bekerja dengan sebuah context dari parentnya dan melakukan suatu hal diatas itu
+2.  
+di main.dart:
+MaterialApp dengan text judul dan tema ThemeData yang berisi Colorscheme, yang menentukan warna
+di menu.dart:
+Build Scaffold yang menjelaskan strukturnya yang berbentuk AppBar dan body.
+AppBar juga memiliki Text yang memiliki Textsyle dan backgroundcolor
+Body berbentuk padding yang memiliki EdgeInsets, dan cihldren yang berbentuk Column, untuk disusun secara vertikal
+di column memiliki children berbentuk Row yang memiliki InfoCard berisi NPM, Nama, dan Kelas
+ada SizedBox untuk menampilkan sambutan dengan Textstyle, juga untuk memisahkan row diatas dengan
+Center yang berisi Column yang memiliki Padding yang memiliki Edgeinsets dan Text sendiri
+Center juga memiliki GridView.count yang berfungsi untuk menampilkan ItemCard
+class InfoCard memiliki widget build yang berisi Card yang memiliki Container dengan Edgeinsets dan children yang berbentuk Column dengan Text yang akan disusun secara vertikal
+class ItemCard memiliki widget build yang berisi Material yang memiliki child InkWell yang bisa ditekan
+InkWell itu memiliki child Container yang berCenter dan berColumn yang menampilkan Icon dan Padding sebelum Text
+3.
+MaterialApp adalah widget yang membiarkan user menggunakan segala keperluan yang digunakan untuk aplikasi Material Design dalam satu widget
+karena itu MaterialApp biasa digunakan sebagai widget root
+4.
+stateless widget cocok digunakan untuk teks dan gambar karena tidak akan berubah
+stateful widget cocok untuk hal yang dinamis seperti hasil interaksi dan kotak centang karena memiliki state yang bisa dirubah
+5.
+BuildContext adalah context bagaimana parent dari suatu child terbentuk. itu membantu build untuk mengerti context dari parentnya
+6.
+Hot restart mengulang kembali load suatu aplikasi. Segala data dan state aplikasi akan hilang
+Hot reload memungkinkan untuk membuat perubahan tampa menghapus state dan data aplikasi
