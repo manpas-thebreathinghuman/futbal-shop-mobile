@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:futbal_shop_mobile/newlist_form.dart';
+import 'package:futbal_shop_mobile/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -21,7 +23,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         // Judul aplikasi "Football News" dengan teks putih dan tebal.
         title: const Text(
-          'Football News',
+          'Futbal Shop',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -30,6 +32,7 @@ class MyHomePage extends StatelessWidget {
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -60,7 +63,7 @@ class MyHomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
                     child: Text(
-                      'Selamat datang di Football News',
+                      'Slamat datanh di futbbal shop',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
@@ -154,10 +157,17 @@ class ItemCard extends StatelessWidget {
         onTap: () {
           // Menampilkan pesan SnackBar saat kartu ditekan.
           ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-                SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
-            );
+            ..hideCurrentSnackBar();
+            if (item.name == "Create Product") {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const NewsFormPage()),
+              );
+            }else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text("Kamu telah menekan tombol ${item.name}!"))
+              );
+            }
         },
         // Container untuk menyimpan Icon dan Text
         child: Container(
